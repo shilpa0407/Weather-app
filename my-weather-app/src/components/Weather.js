@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../css/Weather.css";
+import map from  "../Images/map.png"
+import wave1 from "../Images/wave1.png"
+import wave2 from "../Images/wave2.png"
 
 const Weather = () => {
   const [city, setCity] = useState(null);
@@ -18,16 +21,18 @@ const Weather = () => {
   return (
     <div className="body">
       <div className="box-1">
-        <input
-          type="search"
+        <input type="search" placeholder="Search with city names" 
           className="searchIn"
           onChange={(event) => {
             setSearch(event.target.value);
           }}
         />
         {city && (
-          <div className="info">
-            <p className="location">{city.name}</p>
+          <div className="info"> 
+          <div className="icon"> 
+          <div className="waves"><img src={map} alt="waves"/></div>
+            <div><p className="location">{city.name}</p></div>
+            </div>
             {city.main && (
               <div>
                 <p className="temp">{city.main.temp} `Cel</p>
@@ -36,8 +41,17 @@ const Weather = () => {
                 </p>
               </div>
             )}
-          </div>
+    
+             <div className="image-container">
+             <div className="water-effect">
+      <img src={wave1} alt="Background" className="background-image" />
+      <img src={wave2} alt="Overlay" className="overlay-image" />
+      </div>
+    </div>
+    </div>
+      
         )}
+        
       </div>
     </div>
   );

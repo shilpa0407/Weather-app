@@ -148,6 +148,15 @@
     perspective: 1000px;
 }
 
+.error-m{
+    text-align: center;
+    padding-top: 30px;
+    color: red;
+  font-size: 25px;
+  font-weight: bold;
+    
+}
+
 @media screen and (max-width: 480px) {
     .box-1 {
       width: 90%;
